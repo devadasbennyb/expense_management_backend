@@ -1,0 +1,275 @@
+<div>
+  <div id="dash1" class="text-center"><br>
+    <div><img id="tlogo" src="assets\logo.png"></div>
+    <hr style="height:4px;color:rgb(11, 109, 221);">
+    <div><label class="form-label" routerLink="/home-page"><img src="assets\home.png"> Home</label></div>
+    <hr>
+    <div><label class="form-label" routerLink="/expenses">Expenses</label></div>
+    <hr>
+    <div><label class="form-label" routerLink="/trips" for="">Trips</label></div>
+    <hr>
+    <div><label class="form-label" routerLink="/reports">Expenses Reports</label></div>
+    <hr>
+    <div><label class="form-label" for="" routerLink="/advances">Advances</label></div>
+    <hr>
+    <div><label class="form-label" for="" routerLink="/settings"><img src="assets\settings.png"> Settings</label></div>
+
+    <hr>
+    <div style="margin-top: 55%;">
+      <hr style="height:4px;color:rgb(52, 47, 53);"><label for="admin" class="form-label"
+        routerLink="/admin">Admin</label>
+    </div>
+  </div>
+
+  <div id="dash2">
+    <div id="addExpense">
+      <button class=" btn btn-success fs-5" data-bs-toggle="modal" data-bs-target="#addExpenseModal">Add
+        Expenses</button>
+    </div><br>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ExpenseId</th>
+          <th>EmployeeId</th>
+          <th>ExpenseName</th>
+          <th>ExpenseTypeId</th>
+          <th>Merchant</th>
+          <th>Description</th>
+          <th>PaymentId</th>
+          <th>Currency</th>
+          <th>Amount</th>
+          <th>Actions</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of expenseDetails">
+          <td>{{data.expId}}</td>
+          <td>{{data.empId}}</td>
+          <td>{{data.expenseName}}</td>
+          <td>{{data.expTypeId}}</td>
+          <td>{{data.merchant}}</td>
+          <td>{{data.description}}</td>
+          <td>{{data.paymentId}}</td>
+          <td>{{data.currency}}</td>
+          <td>{{data.amount}}</td>
+          <i class="fa fa-pencil" data-bs-toggle="modal" (click)="editExpense(data)" data-bs-target="#singleExpenseModal"
+            aria-hidden="true"></i>
+          <i class="fa fa-trash-o" (click)="deleteExpense(data)" aria-hidden="true"></i>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!--Add Expense Modal -->
+<div class="modal fade" id="addExpenseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Add Expense</h2>
+      </div>
+      <div class="modal-body text-center">
+        <ul style="list-style: none;">
+
+          <li> <button class=" btn btn-info list-group-item mb-2" type="button" (click)="clickAddExpense()"
+              data-bs-toggle="modal" data-bs-target="#singleExpenseModal">Add Expense</button></li>
+          <li><button class="btn btn-info list-group-item mb-2" type="button" data-bs-toggle="modal"
+              data-bs-target="#MultipleModal">Multiple</button></li>
+        </ul>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Single Expense Modal -->
+<div class="modal fade" id="singleExpenseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Add Expense</h2>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="formValue" class="spaces">
+          <table class="table">
+            <tbody>
+              <tr *ngIf="expId">
+                <th>Expense Id</th>
+                <th><input placeholder="Expense Id" required type="number" class="form-control" formControlName="expId">
+                </th>
+              </tr>
+              <tr>
+                <th>Employee Id</th>
+                <th><input placeholder="EmployeeId" required type="text" class="form-control" formControlName="empId">
+                </th>
+              </tr>
+              <tr>
+                <th>Expense Name</th>
+                <th><input placeholder="EmployeeName" required type="text" class="form-control"
+                    formControlName="expenseName"></th>
+              </tr>
+              <tr>
+                <th>Expense Type Id</th>
+                <th><input placeholder="ExpenseTypeId" required type="text" class="form-control"
+                    formControlName="expTypeId"></th>
+              </tr>
+              <tr>
+                <th>Merchant</th>
+                <th><input placeholder="Merchant" required type="text" class="form-control" formControlName="merchant">
+                </th>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <th><input placeholder="Description" required type="text" class="form-control"
+                    formControlName="description"></th>
+              </tr>
+              <tr>
+                <th>Payment Id</th>
+                <th><input placeholder="Payment Id" required type="number" class="form-control"
+                    formControlName="paymentId"></th>
+              </tr>
+              <tr>
+                <th>Currency</th>
+                <th><select name="orderCurrency" id="orderCurrency" formControlName="currency" class="form-control">
+                  <option value="{{currency.code}}" *ngFor="let currency of CurrencyList">{{currency.text}}</option></select></th>
+              </tr>
+              <tr>
+                <th>Amount</th>
+                <th><input placeholder="Amount" required class="form-control" formControlName="amount"></th>
+              </tr>
+              <tr>
+                <th>Choose File</th>
+                <td><input type="file" required class="form-control" onchange="readURL(this)" accept="Image/*" formControlName="chooseFile"></td>
+              </tr>
+              <tr class="col-md-12 text-center">
+                <td colspan="2"><button *ngIf="addSubmit" class="btn btn-success" type="button"
+                    (click)="addExpenses()">Save</button>
+
+                <td colspan="2"><button *ngIf="editSubmit" class="btn btn-success" type="button"
+                    (click)="updateExpense()">Save</button>
+                  <button type="button" style="background-color: red;" class="btn btn-secondary"
+                    data-bs-dismiss="modal">Close</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--MultipleModal -->
+<div class="modal fade" id="MultipleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Expense</h2>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue" class="spaces">
+          <table class="table table-bordered table-responsive-md table-striped">
+            <thead>
+              <tr>
+                <th class="text-center" style="width: 5%;">Expense Id</th>
+                <th class="text-center">Employee Id</th>
+                <th class="text-center">Expense Name</th>
+                <th class="text-center">Expense Type Id</th>
+                <th class="text-center">Merchant</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">Payment Id</th>
+                <th class="text-center">Currency</th>
+                <th class="text-center">Amount</th>
+                <th class="text-center" style="width: 5%;">Choose file</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><input placeholder="Expense Id" required type="number" class="form-control" formControlName="expId">
+                </td>
+                <td><input placeholder="EmployeeId" required type="text" class="form-control" formControlName="empId">
+                </td>
+                <td><input placeholder="EmployeeName" required type="text" class="form-control"
+                    formControlName="expenseName"></td>
+                <td><input placeholder="ExpenseTypeId" required type="text" class="form-control"
+                    formControlName="expTypeId"></td>
+                <td><input placeholder="Merchant" required type="text" class="form-control" formControlName="merchant">
+                </td>
+                <td><input placeholder="Description" required type="text" class="form-control"
+                    formControlName="description"></td>
+                <td><input placeholder="Payment Id" required type="number" class="form-control"
+                    formControlName="paymentId"></td>
+                <td><input placeholder="Currency" required class="form-control" formControlName="currency"></td>
+                <td><input placeholder="Amount" required class="form-control" formControlName="amount"></td>
+                <td><input type="file" onchange="readURL(this)" accept="Image/*"></td>
+
+
+              </tr>
+              <tr>
+                <td><input placeholder="Expense Id" required type="number" class="form-control" formControlName="expId">
+                </td>
+                <td><input placeholder="EmployeeId" required type="text" class="form-control" formControlName="empId">
+                </td>
+                <td><input placeholder="EmployeeName" required type="text" class="form-control"
+                    formControlName="expenseName"></td>
+                <td><input placeholder="ExpenseTypeId" required type="text" class="form-control"
+                    formControlName="expTypeId"></td>
+                <td><input placeholder="Merchant" required type="text" class="form-control" formControlName="merchant">
+                </td>
+                <td><input placeholder="Description" required type="text" class="form-control"
+                    formControlName="description"></td>
+                <td><input placeholder="Payment Id" required type="number" class="form-control"
+                    formControlName="paymentId"></td>
+                <td><input placeholder="Currency" required class="form-control" formControlName="currency"></td>
+                <td><input placeholder="Amount" required class="form-control" formControlName="amount"></td>
+                <td><input type="file" onchange="readURL(this)" accept="Image/*"></td>
+
+
+              </tr>
+              <tr>
+                <td><input placeholder="Expense Id" required type="number" class="form-control" formControlName="expId">
+                </td>
+                <td><input placeholder="EmployeeId" required type="text" class="form-control" formControlName="empId">
+                </td>
+                <td><input placeholder="EmployeeName" required type="text" class="form-control"
+                    formControlName="expenseName"></td>
+                <td><input placeholder="ExpenseTypeId" required type="text" class="form-control"
+                    formControlName="expTypeId"></td>
+                <td><input placeholder="Merchant" required type="text" class="form-control" formControlName="merchant">
+                </td>
+                <td><input placeholder="Description" required type="text" class="form-control"
+                    formControlName="description"></td>
+                <td><input placeholder="Payment Id" required type="number" class="form-control"
+                    formControlName="paymentId"></td>
+                <td><input placeholder="Currency" required class="form-control" formControlName="currency"></td>
+                <td><input placeholder="Amount" required class="form-control" formControlName="amount"></td>
+                <td><input type="file" onchange="readURL(this)" accept="Image/*"></td>
+
+              </tr>
+              <!--           
+              <tr>
+                <td><input type="date"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td><input type="file" onchange="readURL(this)" accept="Image/*"></td>
+              </tr> -->
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" type="button" (click)="addExpenses()">Save</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

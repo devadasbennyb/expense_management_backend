@@ -1,0 +1,52 @@
+#dash1
+{
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#dash2
+{
+    width: 85%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    background-color:rgb(219, 223, 220);
+}
+#tlogo
+{
+  height: 50%;
+  width:90%;
+}
+#profile
+{
+  top:10%;
+  margin-left: 80%;
+  margin-top: 3%;
+}
+#logIn
+{
+  margin-left: 80%;
+  width: 20%;
+}
+.b
+{
+  border-radius: 15%;
+}
+#reportSummary
+{
+  height: 30%;
+  width: 50%;
+  margin-top: 5%;
+  margin-left: 25%;
+  border-style: groove;
+  border-color: black;
+}
+#myExpenses
+{
+  margin-top: 5%;
+  border-color:rgb(219, 223, 220);
+}

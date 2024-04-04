@@ -1,0 +1,44 @@
+#dash1
+{
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#dash2
+{
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    right: 70%;
+    border-style:ridge;
+  
+}
+#dash21
+{
+    position: relative;
+    margin-top: 80%;
+}
+#dash3
+{
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+ 
+}
+#tlogo
+{
+  height: 50%;
+  width:90%;
+}
+#addUsers
+{
+    margin-left: 85%;
+    margin-top: 2%;
+}

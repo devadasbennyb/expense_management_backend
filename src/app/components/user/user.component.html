@@ -1,0 +1,154 @@
+<div>
+    <div id="dash1" class="text-center"><br>
+        <div><img id="tlogo" src="assets\logo.png"></div>
+        <hr style="height:4px;color:rgb(11, 109, 221);">
+        <div><label class="form-label" routerLink="/home-page"><img src="assets\home.png"> Home</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/expenses">Expenses</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/trips" for="">Trips</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/reports">Expenses Reports</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/advances">Advances</label></div>
+        <hr>
+        <div><label class="form-label" for="settings" routerLink="/settings"><img src="assets\settings.png">
+                Settings</label></div>
+        <hr>
+        <div style="margin-top: 55%;">
+            <hr style="height:4px;color:rgb(52, 47, 53);"><label for="admin" class="form-label"
+                routerLink="/admin">Admin</label>
+        </div>
+    </div>
+    <div id="dash2">
+        <div id="dash21" class="d-grid text-center fs-6 ">
+            <button for="user" class="form-label btn btn-light" routerLink="/user">User</button>
+            <button for="Groups" type="button" class="form-label btn btn-light" routerLink="/groups">Groups</button>
+            <button for="Roles" class="form-label btn btn-light" routerLink="/roles">Roles</button>
+            <button for="paymentTypes" class="form-label btn btn-light" routerLink="/payment-types">Payment
+                Types</button>
+            <button for=" expensesRules" class="form-label btn btn-light" routerLink="/expenses-rules">Expenses
+                Rules</button>
+            <button for="mileage" class="form-label btn btn-light" routerLink="/mileage">Mileage</button>
+            <button for="integrations" class="form-label btn btn-light" routerLink="/integrations">Integrations</button>
+        </div>
+    </div>
+    <div id="dash3">
+        <div id="addUsers">
+            <button (click)="clickAddUser()" class=" btn btn-success fs-6" data-bs-toggle="modal"
+                data-bs-target="#addUser">Add
+                User</button>
+        </div><br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>Mobile</th>
+                    <th>Manager ID</th>
+                    <th>Email ID</th>
+                    <th>Zip</th>
+                    <th>Acc Num</th>
+                    <th>Credit Card Num</th>
+                    <th>Depart ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- {{employeData | json}} -->
+                <tr *ngFor="let data of employeeData;">
+                    <td>{{data.empId }}</td>
+                    <td>{{data.firstName }}</td>
+                    <td>{{data.lastName }}</td>
+                    <td>{{data.address }}</td>
+                    <td>{{data.state }}</td>
+                    <td>{{data.mobile }}</td>
+                    <td>{{data.managerId }}</td>
+                    <td>{{data.emailId }}</td>
+                    <td>{{data.zip }}</td>
+                    <td>{{data.accno }}</td>
+                    <td>{{data.creditcardNo }}</td>
+                    <td>{{data.departId }}</td>
+                    <i class="fa fa-pencil" data-bs-toggle="modal" (click)="editUser(data)" data-bs-target="#addUser"
+                        aria-hidden="true"></i>
+                    <i class="fa fa-trash-o" (click)="deleteUser(data)" aria-hidden="true"></i>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--addUserModal -->
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Add User</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div *ngIf="empId" class="mb-3">
+                        <label class="form-label">Employee ID</label>
+                        <input placeholder="Enter Employee ID" class="form-control" required type="text"
+                            formControlName="empId">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">First Name</label>
+                        <input placeholder="First Name" class="form-control" required type="text"
+                            formControlName="firstName">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Last Name</label>
+                        <input placeholder="Last Name" class="form-control" type="text" formControlName="lastName">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <input placeholder="Address" class="form-control" required formControlName="address">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">State</label>
+                        <input placeholder="State" class="form-control" formControlName="state">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mobile</label>
+                        <input placeholder="Mobile Number" class="form-control" type="number" formControlName="mobile">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Manager Id</label>
+                        <input placeholder="Manager ID" class="form-control" type="number" formControlName="managerId">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email ID</label>
+                        <input placeholder="Address Id" class="form-control" type="text" formControlName="emailId">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Zip</label>
+                        <input placeholder="ZIP" class="form-control" type="number" formControlName="zip">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Account Number</label>
+                        <input placeholder="Mobile Number" class="form-control" type="number" formControlName="accno">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Credit Card Number</label>
+                        <input placeholder="Credit Card Number" class="form-control" type="formControlName"
+                            formControlName="creditcardNo">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Department Id</label>
+                        <input placeholder="Department Id" class="form-control" type="number"
+                            formControlName="departId">
+                    </div>
+                    <div class="modal-footer">
+                        <button *ngIf="addSubmit" type="button" class="btn btn-primary"
+                            (click)="addUser()">Submit</button>
+                        <button *ngIf="editSubmit" type="button" class="btn btn-primary"
+                            (click)="updateUser()">submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

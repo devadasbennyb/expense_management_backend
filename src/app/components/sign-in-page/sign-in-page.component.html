@@ -1,0 +1,54 @@
+<div id="div0">
+    <img class='bg-img' src="assets\sign-in.jpg" alt="">
+    <div id="div1">
+        <div>
+            <h1 class="fw-bold">Get's started...</h1>
+            <small class="fw-lighter">please enter your email and password</small>
+        </div><br>
+        <form [formGroup]="logInForm" style="padding-right:10%;">
+            <div class="mb-2">
+                <label class="form-label fw-bold">User Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-user-circle "></i>
+                        </div>
+                    </div>
+                    <input formControlName="emailId" placeholder="Enter Name" type="text" class="form-control fa">
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="form-label fw-bold">Password</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                    </div>
+                    <input formControlName="password" placeholder="Enter password" type="password"
+                        class="form-control fa">
+                </div>
+            </div>
+            <div class="mb-2 text-left">
+                <label class="form-label"><input type="checkbox"> Remember Me</label>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary fa mb-2" style="width:50%" type="submit" (click)="logIn()">Log In</button> &nbsp;
+            </div>
+        </form>
+        <div class="text-center">
+            <label class="form-label">
+                <a class="btn btn-link" routerLink="/forget-password" >Forget Password?</a>/
+                <a routerLink="/sign-up-page">Sign Up</a></label>
+            <p>or sign in with:</p>
+            <a href="https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                target="_blank" type="button" class="light-blue-text mx-2">
+                <i class="fa fa-google"></i>
+            </a>
+        </div>
+
+
+
+
+
+

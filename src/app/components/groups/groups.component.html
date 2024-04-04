@@ -1,0 +1,98 @@
+<div>
+    <div id="dash1" class="text-center"><br>
+        <div><img id="tlogo" src="assets\logo.png"></div>
+        <hr style="height:4px;color:rgb(11, 109, 221);">
+        <div><label class="form-label" routerLink="/home-page"><img src="assets\home.png"> Home</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/expenses">Expenses</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/trips" for="">Trips</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/reports">Expenses Reports</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/advances">Advances</label></div>
+        <hr>
+        <div><label class="form-label" for="settings" routerLink="/settings"><img src="assets\settings.png">
+                Settings</label></div>
+        <hr>
+        <div style="margin-top: 55%;">
+            <hr style="height:4px;color:rgb(52, 47, 53);"><label for="admin" class="form-label"
+                routerLink="/admin">Admin</label>
+        </div>
+    </div>
+    <div id="dash2">
+        <div id="dash21" class="d-grid text-center fs-6 ">
+            <button for="user" class="form-label btn btn-light" routerLink="/user">User</button>
+            <button for="Groups" type="button" class="form-label btn btn-light" routerLink="/groups">Groups</button>
+            <button for="Roles" class="form-label btn btn-light" routerLink="/roles">Roles</button>
+            <button for="paymentTypes" class="form-label btn btn-light" routerLink="/payment-types">Payment
+                Types</button>
+            <button for=" expensesRules" class="form-label btn btn-light" routerLink="/expenses-rules">Expenses
+                Rules</button>
+            <button for="mileage" class="form-label btn btn-light" routerLink="/mileage">Mileage</button>
+            <button for="integrations" class="form-label btn btn-light" routerLink="/integrations">Integrations</button>
+        </div>
+    </div>
+    <div id="dash3">
+        <div id="addGroups">
+            <button class=" btn btn-success fs-6" data-bs-toggle="modal" data-bs-target="#addGroup">Add Groups</button>
+        </div><br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Members</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- {{employeData | json}} -->
+                <tr *ngFor="">
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--groupsModal -->
+<div class="modal fade" id="addGroup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Add Group</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Group Name</th>
+                                <th><input placeholder="Enter Group Name" required type="text" class="form-control"
+                                        formControlName="groupName"></th>
+                            </tr>
+                            <tr>
+                                <th>Members</th>
+                                <th><input placeholder="Enter Members Name" type="text" class="form-control"
+                                        formControlName="members"></th>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <th><input placeholder="Enter Description" required type="email" class="form-control"
+                                        formControlName="description"></th>
+                            </tr>
+                            <tr class="col-md-12 text-center">
+                                <td colspan="2"><button type="button" style="background-color: green;"
+                                        class="btn btn-primary">Save</button>&nbsp;
+                                    <button type="button" style="background-color: red;" class="btn btn-primary"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

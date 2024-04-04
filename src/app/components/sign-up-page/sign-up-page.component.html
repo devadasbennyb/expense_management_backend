@@ -1,0 +1,55 @@
+<div id="div0">
+    <img class='bg-img' src="assets\sign-up.jpg" alt="">
+    <div id="div1">
+        <div class="text-center">
+            <h1>SignUp</h1>
+        </div>
+        <form [formGroup]="formValue">
+            <div class="mb-3">
+                <label class="form-label">FirstName</label>
+                <input placeholder="Enter FirstName" required type="text" class="form-control"
+                    formControlName="firstName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">LastName</label>
+                <input placeholder="Enter LastName" type="text" class="form-control" formControlName="lastName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">EmpId</label>
+                <input placeholder="Enter EmpId" required type="number" pattern="[1-9]{5}" class="form-control"
+                    formControlName="empId">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Company Name</label>
+                <input placeholder="Enter Company Name" type="text" class="form-control" formControlName="companyName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mobile Number</label>
+                <input placeholder="Enter Mobile Number" type="number" class="form-control"
+                    formControlName="mobilenumber">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input placeholder="Enter Email Address" type="email" class="form-control" aria-describedby="emailHelp"
+                    formControlName="emailId">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Designation</label>
+                <input placeholder="Enter Designation" type="text" class="form-control" formControlName="Designation">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input placeholder="Enter Password" type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input placeholder="Enter Confirm Password" type="password" class="form-control"
+                    formControlName="confirmPassword">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" (click)="signUp()">Sign Up</button><br><br>
+                <a href="/"> Click to Sign in! </a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+#div1
+{
+    width: 40%;
+    left:30%;
+    position:sticky;
+    padding: 2%;
+    border-style: groove;
+    border:1px solid blue;
+    margin-top:2%;
+    margin-bottom: 2%;
+    background-color: aliceblue;
+}
+.bg-img 
+{
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    position: fixed ;
+}

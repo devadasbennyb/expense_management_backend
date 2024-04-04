@@ -1,0 +1,117 @@
+<div>
+    <div id="dash1" class="text-center"><br>
+        <div><img id="tlogo" src="assets\logo.png"></div>
+        <hr style="height:4px;color:rgb(11, 109, 221);">
+        <div><label class="form-label" routerLink="/home-page"><img src="assets\home.png"> Home</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/expenses">Expenses</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/trips">Trips</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/reports">Expenses Reports</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/advances">Advances</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/settings"><img src="assets\settings.png"> Settings</label></div>
+        <hr>
+    
+        <div style="margin-top: 55%;"><hr style="height:4px;color:rgb(52, 47, 53);"><label for="admin" class="form-label" routerLink="/admin">Admin</label></div>
+    </div>
+    <div id="dash2">
+        <div id="addTrips">
+            <button class=" btn btn-success fs-5" (click)="clickAddTrip()" data-bs-toggle="modal"
+                data-bs-target="#CreatingTripsModal">Create Trip</button>
+        </div><br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Trip Id</th>
+                    <th>Employee Id</th>
+                    <th>Trip Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>From Location</th>
+                    <th>To Location</th>
+                    <th>Budget</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of tripDetails">
+                    <td>{{data.tripId}}</td>
+                    <td>{{data.empId}}</td>
+                    <td>{{data.tripName}}</td>
+                    <td>{{data.startDate}}</td>
+                    <td>{{data.endDate}}</td>
+                    <td>{{data.fromLocation}}</td>
+                    <td>{{data.toLocation}}</td>
+                    <td>{{data.budget}}</td>
+                    <i class="fa fa-pencil" data-bs-toggle="modal" (click)="editTrip(data)" data-bs-target="#CreatingTripsModal" aria-hidden="true"></i>
+                    <i class="fa fa-trash-o" (click)="deleteTrip(data)" aria-hidden="true"></i>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--Creating Trips Modal -->
+<div class="modal fade" id="CreatingTripsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Create Trip</h2>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue" class="spaces" >
+                    <table class="table">
+                      <tbody>
+                        <tr *ngIf="tripId">
+                          <th>Trip Id</th>
+                          <th><input placeholder="Trip Id" required type="number" class="form-control" formControlName="tripId"></th>
+                        </tr>
+                        <tr>
+                          <th>Employee Id</th>
+                          <th><input placeholder="EmployeeId" required type="text" class="form-control" formControlName="empId"></th>
+                        </tr>
+                        <tr>
+                          <th>Trip Name</th>
+                          <th><input placeholder="TripName" required type="text" class="form-control" formControlName="tripName"></th>
+                        </tr>
+                        <tr>
+                          <th>Start Date</th>
+                          <th><input placeholder="Start Date" required type="date" class="form-control" formControlName="startDate"></th>
+                        </tr>
+                        <tr>
+                          <th>End Date</th>
+                          <th><input placeholder="Merchant" required type="date" class="form-control" formControlName="endDate"></th>
+                        </tr>
+                        <tr>
+                          <th>From Location</th>
+                          <th><input placeholder="From Location" required type="text" class="form-control" formControlName="fromLocation"></th>
+                        </tr>
+                        <tr>
+                          <th>To Location</th>
+                          <th><input placeholder="To Location" required type="text" class="form-control" formControlName="toLocation"></th>
+                        </tr>
+                        <tr>
+                          <th>Budget</th>
+                          <th><input placeholder="Budget" required class="form-control" formControlName="budget"></th>
+                        </tr>
+                        <tr class="col-md-12 text-center">
+                          <td colspan="2"><button *ngIf="addSubmit" class="btn btn-success" type="button" (click)="addTrip()">Save</button>
+                            
+                            <td colspan="2"><button *ngIf="editSubmit" class="btn btn-success" type="button" (click)="updateTrip()">Save</button>
+                            <button type="button" style="background-color: red;" class="btn btn-secondary"
+                              data-bs-dismiss="modal">Close</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </form>
+                      </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

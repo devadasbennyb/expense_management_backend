@@ -1,0 +1,222 @@
+<div>
+    <div id="dash1" class="text-center"><br>
+        <div><img id="tlogo" src="assets\logo.png"></div>
+        <hr style="height:4px;color:rgb(11, 109, 221);">
+        <div><label class="form-label" routerLink="/home-page"><img src="assets\home.png"> Home</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/expenses">Expenses</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/trips" for="">Trips</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/reports">Expenses Reports</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/advances">Advances</label></div>
+        <hr>
+        <div><label class="form-label" for="settings" routerLink="/settings"><img src="assets\settings.png">
+                Settings</label></div>
+        <hr>
+        <div style="margin-top: 55%;">
+            <hr style="height:4px;color:rgb(52, 47, 53);"><label for="admin" class="form-label"
+                routerLink="/admin">Admin</label>
+        </div>
+    </div>
+
+    <div id="dash2">
+        <div id="profile">
+            <button class="btn btn-light b" data-bs-toggle="modal" data-bs-target="#addExpenseModal">Expense</button>
+            &nbsp;
+            <button class="btn btn-light b" data-bs-toggle="modal" data-bs-target="#addMileage">Mileage</button> &nbsp;
+            <label class="form-label" data-bs-toggle="modal" data-bs-target="#logIn">
+                <i class="fa fa-user-circle-o fa-2x"></i></label>
+        </div>
+        <div>
+            <table id="reportSummary" class="table">
+                <thead>
+                    <tr>
+                        <th>Report Id</th>
+                        <th>Status Of Expense</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of reportData">
+                        <td>{{data.id}}</td>
+                        <td>{{data.statusOfExpense}}</td>
+                        <td>{{data.description}}</td>
+                        <td>{{data.amount}}</td>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table id="myExpenses" class="table fs-6">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th></th>
+                        <h3 class="fw-bold">where are my expenses</h3>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td scope="row">Overall Expenses</td>
+                        <td>Waiting for Approval</td>
+                        <td>Approved Expenses</td>
+                        <td>Reimbursed Expenses</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">10000 INR</td>
+                        <td>4000 INR</td>
+                        <td>3000 INR</td>
+                        <td>3000 INR</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Add Expense Modal -->
+<div class="modal fade" id="addExpenseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Add Expense</h2>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="formValue" class="spaces">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Expense Id</th>
+                                <th><input placeholder="Expense Id" required type="number" class="form-control"
+                                        formControlName="expId">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Employee Id</th>
+                                <th><input placeholder="EmployeeId" required type="text" class="form-control"
+                                        formControlName="empId">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Expense Name</th>
+                                <th><input placeholder="EmployeeName" required type="text" class="form-control"
+                                        formControlName="expenseName"></th>
+                            </tr>
+                            <tr>
+                                <th>Expense Type Id</th>
+                                <th><input placeholder="ExpenseTypeId" required type="text" class="form-control"
+                                        formControlName="expTypeId"></th>
+                            </tr>
+                            <tr>
+                                <th>Merchant</th>
+                                <th><input placeholder="Merchant" required type="text" class="form-control"
+                                        formControlName="merchant">
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <th><input placeholder="Description" required type="text" class="form-control"
+                                        formControlName="description"></th>
+                            </tr>
+                            <tr>
+                                <th>Payment Id</th>
+                                <th><input placeholder="Payment Id" required type="number" class="form-control"
+                                        formControlName="paymentId"></th>
+                            </tr>
+                            <tr>
+                                <th>Currency</th>
+                                <th><select name="orderCurrency" id="orderCurrency" formControlName="currency"
+                                        class="form-control">
+                                        <option value="{{currency.code}}" *ngFor="let currency of CurrencyList">
+                                            {{currency.text}}</option>
+                                    </select></th>
+                            </tr>
+                            <tr>
+                                <th>Amount</th>
+                                <th><input placeholder="Amount" required class="form-control" formControlName="amount">
+                                </th>
+                            </tr>
+                            <tr class="col-md-12 text-center">
+                                <td colspan="2"><button class="btn btn-success" type="button"
+                                        (click)="addExpenses()">Save</button>
+
+                                    <button type="button" style="background-color: red;" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--addMileageModal -->
+<div class="modal fade" id="addMileage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Add Mileage Rate</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label class="form-label">Rate Name</label>
+                    <input placeholder="Enter Rate Name" required type="text" class="form-control"
+                        formControlName="rateName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Set Mileage Rate</label>
+                    <input placeholder="Enter Mileage Rate" type="text" class="form-control"
+                        formControlName="setMileageRate">
+                </div>
+                <div class="mb-2">
+                    <label class="form-label  fs-6" for="">Currency</label>
+                    <select class="form-control" name="" id="">
+                        <option value="" hidden>$</option>
+                        <option value="">INR</option>
+                        <option value="">USD</option>
+                        <option value="">AUD</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Distance Unit</label>
+                    <select class="form-control" name="" id="">
+                        <option value="" hidden>action</option>
+                        <option value="">KM</option>
+                        <option value="">Meter</option>
+                        <option value="">Feets</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Add Rate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- logInModal -->
+<div class="modal fade" id="logIn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel"><i class="fa fa-user-circle-o fa-2x"></i>Profile</h2>
+            </div>
+            <div class="modal-body">
+                <h2 *ngFor="let data of expenseDetails">{{this.data.expName}}</h2>
+                <h3>Username@gmail.com</h3>
+                <div class="text-center">
+                    <button class="btn btn-secondary" type="button" routerLink="/sign-in-page">LogOut</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

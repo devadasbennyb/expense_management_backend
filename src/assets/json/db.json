@@ -1,0 +1,93 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "sign-up-page": [
+    {
+      "firstName": "Benny",
+      "lastName": "Das",
+      "empId": "001",
+      "companyName": "Tec",
+      "mobileNumber": 9848012191,
+      "email": "benny@yopmail.com",
+      "designation": "ASE",
+      "password": "Benny@7036",
+      "confirmPassword": "Benny@7036",
+      "id": 1
+    },
+    {
+      "firstName": "Nishitha",
+      "lastName": "Sahu",
+      "empId": "002",
+      "companyName": "Tec",
+      "mobileNumber": 9876543210,
+      "email": "nishitha@yopmail.com",
+      "designation": "ASE",
+      "password": "Nishitha@123",
+      "confirmPassword": "Nishitha@123",
+      "id": 2
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "empId": "",
+      "companyName": "",
+      "mobileNumber": "",
+      "email": "",
+      "designation": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": 3
+    },
+    {
+      "firstName": "Shyam",
+      "lastName": "Uppatala",
+      "empId": "003",
+      "companyName": "Tec",
+      "mobileNumber": 9848012191,
+      "email": "shyam@yopmail.com",
+      "designation": "ASE",
+      "password": "shyam@123",
+      "confirmPassword": "shyam@123",
+      "id": 4
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "empId": "",
+      "companyName": "",
+      "mobileNumber": "",
+      "email": "",
+      "designation": "",
+      "password": "",
+      "confirmPassword": "",
+      "id": 5
+    },
+    {
+      "firstName": "a",
+      "lastName": "b",
+      "empId": "8",
+      "companyName": "t",
+      "mobileNumber": 9,
+      "email": "a",
+      "designation": "h",
+      "password": "1",
+      "confirmPassword": "1",
+      "id": 6
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

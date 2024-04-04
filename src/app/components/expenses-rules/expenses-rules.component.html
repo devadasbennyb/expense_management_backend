@@ -1,0 +1,117 @@
+<div>
+    <div id="dash1" class="text-center"><br>
+        <div><img id="tlogo" src="assets\logo.png"></div>
+        <hr style="height:4px;color:rgb(11, 109, 221);">
+        <div><label class="form-label" routerLink="/home-page"><img src="assets\home.png"> Home</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/expenses">Expenses</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/trips" for="">Trips</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/reports">Expenses Reports</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/advances">Advances</label></div>
+        <hr>
+        <div><label class="form-label" for="settings" routerLink="/settings"><img src="assets\settings.png">
+                Settings</label></div>
+        <hr>
+        <div style="margin-top: 55%;">
+            <hr style="height:4px;color:rgb(52, 47, 53);"><label for="admin" class="form-label"
+                routerLink="/admin">Admin</label>
+        </div>
+    </div>
+    <div id="dash2">
+        <div id="dash21" class="d-grid text-center fs-6 ">
+            <button for="user" class="form-label btn btn-light" routerLink="/user">User</button>
+            <button for="Groups" type="button" class="form-label btn btn-light" routerLink="/groups">Groups</button>
+            <button for="Roles" class="form-label btn btn-light" routerLink="/roles">Roles</button>
+            <button for="paymentTypes" class="form-label btn btn-light" routerLink="/payment-types">Payment
+                Types</button>
+            <button for=" expensesRules" class="form-label btn btn-light" routerLink="/expenses-rules">Expenses
+                Rules</button>
+            <button for="mileage" class="form-label btn btn-light" routerLink="/mileage">Mileage</button>
+            <button for="integrations" class="form-label btn btn-light" routerLink="/integrations">Integrations</button>
+        </div>
+    </div>
+    <div id="dash3">
+        <div id="expenseRule">
+            <button class=" btn btn-success fs-6" data-bs-toggle="modal" data-bs-target="#addRule">Add Rule</button>
+        </div><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col order-first">
+                    Rule Name
+                </div>
+                <div class="col">
+                    User/Group
+                </div>
+                <div class="col">
+                    Condition
+                </div>
+                <div class="col">
+                    Action
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top:5%;">
+            <p>No rules to Display</p>
+        </div>
+    </div>
+</div>
+
+<!--addRuleModal -->
+<div class="modal fade" id="addRule" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Add Expenses Rule</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <select class="form-control" name="" id="">
+                            <option value="" hidden>name</option>
+                            <option value="">***</option>
+                            <option value="">@@@</option>
+                            <option value="">$$$</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">User/Groups</label>
+                        <select class="form-control" name="" id="">
+                            <option value="" hidden>type</option>
+                            <option value="">HR Group</option>
+                            <option value="">IT Group</option>
+                            <option value="">Admin Group</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Condition</label>
+                        <select class="form-control" name="" id="">
+                            <option value="" hidden>condition</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Action</label>
+                        <select class="form-control" name="" id="">
+                            <option value="" hidden>action</option>
+                            <option value="">Accept</option>
+                            <option value="">Decline</option>
+                            <option value="">Waiting</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Add Rule</button>
+            </div>
+        </div>
+    </div>
+</div>

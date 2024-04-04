@@ -1,0 +1,136 @@
+<div>
+    <div id="dash1" class="text-center"><br>
+        <div><img id="tlogo" src="assets\logo.png"></div>
+        <hr style="height:4px;color:rgb(11, 109, 221);">
+        <div><label class="form-label" routerLink="/home-page"><img src="assets\home.png"> Home</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/expenses">Expenses</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/trips">Trips</label></div>
+        <hr>
+        <div><label class="form-label" routerLink="/reports">Expenses Reports</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/advances">Advances</label></div>
+        <hr>
+        <div><label class="form-label" for="" routerLink="/settings"><img src="assets\settings.png"> Settings</label>
+        </div>
+        <hr>
+        <div style="margin-top: 55%;">
+            <hr style="height:4px;color:rgb(52, 47, 53);"><label for="admin" class="form-label"
+                routerLink="/admin">Admin</label>
+        </div>
+    </div>
+    <div id="dash2">
+        <div class="text-center">
+            <h1>Your Profile</h1>
+            <p>change your profile settings</p>
+        </div>
+        <div class="modal-body text-center">
+            <ul style="list-style: none;">
+                <li><button class="btn btn-light list-group-item mb-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#accountDetails">Account Details</button></li>
+                <li><button class="btn btn-light list-group-item mb-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#preferences">Preferences</button></li>
+                <li><button class="btn btn-light list-group-item mb-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#payments">Payments</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--accountDetails Modal -->
+<div class="modal fade" id="accountDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">FirstName</label>
+                    <input placeholder="Enter FirstName" required type="text" class="form-control"
+                        formControlName="firstName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">LastName</label>
+                    <input placeholder="Enter LastName" type="text" class="form-control" formControlName="lastName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Job Title</label>
+                    <input placeholder="Enter Job Title" required type="text" class="form-control"
+                        formControlName="jobTitle">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold fs-6" for="">Language</label>
+                    <select class="form-control">
+                        <option value="" hidden>select</option>
+                        <option value="">English</option>
+                        <option value="">Hindhi</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input placeholder="Enter Email Address" type="email" class="form-control"
+                        aria-describedby="emailHelp" formControlName="email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mobile Number</label>
+                    <input placeholder="Enter Mobile Number" type="number" class="form-control"
+                        formControlName="mobileNumber">
+                </div>
+                <a href="/forget-password">Change Password</a>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="button">Save</button> &nbsp;
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--preferences Modal -->
+<div class="modal fade" id="preferences" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Preferences</h2>
+            </div>
+            <div class="modal-body">
+                <form action="" class="spaces">
+                    <div class="mb-3">
+                        <label class="form-label">Default Currency</label>
+                        <select name="orderCurrency" id="orderCurrency" formControlName="orderCurrency"
+                            class="form-control">
+                            <option value="{{currency.code}}" *ngFor="let currency of CurrencyList">{{currency.text}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Default Unit</label>
+                        <select class="form-control" name="" id="">
+                            <option value="" hidden>select</option>
+                            <option value="">Killo Meters</option>
+                            <option value="">Meters</option>
+                            <option value="">Feets</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Default Country</label>
+                        <select class="form-control" name="" id="">
+                            <option value="" hidden>option</option>
+                            <option value="">India</option>
+                            <option value="">Austrilia</option>
+                            <option value="">Pakistan</option>
+                        </select>
+                    </div>
+                    <!-- <div class="mb-3 text-center">
+                        <label for="trips" class="form-label">Trips </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button (click)="clickEnableTrips()"  class="btn btn-dark  btn-sm" type="button">Enable</button>&nbsp;
+                        <button (click)="clickDisableTrips()" class="btn btn-dark  btn-sm" type="button">Disable</button><br>
+                        <label for="advances" class="form-label">Advances </label>&nbsp;&nbsp;
+                        <button (click)="clickEnableAdvances()" class="btn btn-dark btn-sm" type="button">Enable</button>&nbsp;
+                        <button (click)="clickDisableAdvances()" class="btn btn-dark btn-sm" type="button">Disable</button>
+                    </div> -->
+                </form>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type="button">Save</button> &nbsp;
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>

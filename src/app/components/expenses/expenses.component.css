@@ -1,0 +1,54 @@
+#dash1
+{
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#tlogo
+{
+  height: 50%;
+  width:90%;
+}
+#dash2
+{
+    width: 85%;
+    height: 100%;
+    position:absolute;
+    top: 0px;
+    right: 0;
+    background-color:rgb(230, 243, 235);
+}
+#addExpense
+{
+    margin-left: 85%;
+    margin-top: 2%;
+}
+ #addExpenseModal
+{
+    height: 70%;
+    width: 15%;
+    margin-left: 84%;
+}
+/* #MultipleModal
+{
+    width: 100%;
+    height: 100%;
+}
+.spaces
+{
+    padding:0% 10% 0% 10%;
+}
+#b
+{
+  position: absolute;
+  width: 15%;
+}
+#c
+{
+    position:sticky;
+    margin-left:20%;
+    bottom: 50%;
+    width: 60%;
+} */
