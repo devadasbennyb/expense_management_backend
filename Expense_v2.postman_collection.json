@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "671e9e3c-634e-4883-99f5-5212637e66f2",
+		"name": "Expense_v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1423338"
+	},
+	"item": [
+		{
+			"name": "save department",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"departmentName\": \"Finance\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{expense_v2}}/save/department",
+					"host": [
+						"{{expense_v2}}"
+					],
+					"path": [
+						"save",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch department by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{expense_v2}}/fetch/department/60",
+					"host": [
+						"{{expense_v2}}"
+					],
+					"path": [
+						"fetch",
+						"department",
+						"60"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch all departments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{expense_v2}}/fetch/departments",
+					"host": [
+						"{{expense_v2}}"
+					],
+					"path": [
+						"fetch",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeName\": \"Faiz Ansari\",\n    \"emailId\": \"rishab_pant@tecnics.com\",\n    \"department\": {\n        \"departmentId\": 5\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{expense_v2}}/save/employee",
+					"host": [
+						"{{expense_v2}}"
+					],
+					"path": [
+						"save",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{expense_v2}}/fetch/employee/59",
+					"host": [
+						"{{expense_v2}}"
+					],
+					"path": [
+						"fetch",
+						"employee",
+						"59"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch all employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{expense_v2}}/fetch/employees",
+					"host": [
+						"{{expense_v2}}"
+					],
+					"path": [
+						"fetch",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
