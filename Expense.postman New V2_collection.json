@@ -1,0 +1,1922 @@
+{
+	"info": {
+		"_postman_id": "a5639f0d-3ded-45d6-ba3c-5088143642cf",
+		"name": "Expense",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16443124"
+	},
+	"item": [
+		{
+			"name": "Advances",
+			"item": [
+				{
+					"name": "Get All Advances",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/advances",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"advances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Advances By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/advance/2",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"advance",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Advances By Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/advanceByName/{Advance For Trip}",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"advanceByName",
+								"{Advance For Trip}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Advances",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"advanceName\": \"Advances5\",\r\n    \"date\": \"2020-12-12\",\r\n    \"amount\": 400,\r\n    \"description\": \"Advances\",\r\n    \"status\":\"REPORTED\",\r\n    \"employeeModel\":{\r\n        \"empId\":16\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/advance",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"advance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Advances",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"advanceId\":1,\r\n    \"date\":\"12-12-2020\",\r\n    \"advanceName\":\"advances212\",\r\n     \"status\": \"REPORTED\",\r\n     \"amount\": 5000,\r\n     \"description\": \"no description\",\r\n     \"employeeModel\":{\r\n         \"empId\":11\r\n     }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/advance",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"advance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Advances",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/delete/advance/21",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"advance",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Get All Departments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/departments",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Department By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/department/1",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"department",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Department By Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/departmentByName/Accounts",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"departmentByName",
+								"Accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"departmentName\": \"Infra\",\r\n            \"departmentDescription\": \"Infra Department\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/department",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departmentId\": 21,\r\n    \"departmentName\": \"Microsoft Team\",\r\n    \"departmentDescription\": \"Microsoft Team\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/department",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Department",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/delete/department/21",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"department",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Get All Employees",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/employee",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/employee/11",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"employee",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By Email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/employeeByEmail/GwenStacy@tecnics.com",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"employeeByEmail",
+								"GwenStacy@tecnics.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n        \"firstName\": \"Virat\",\r\n        \"lastName\": \"K\",\r\n        \"state\": \"Delhi\",\r\n        \"address\": \"sarojini nagar\",\r\n        \"departmentModel\" :{\r\n            \"departmentId\": 4\r\n        },\r\n        \"mobile\": 90109583161,\r\n        \"managerModel\": {\r\n           \"managerId\":1\r\n        },\r\n        \"emailId\": \"viratk@tecnics.com\",\r\n        \"creditCard\": 56732489,\r\n        \"accountNumber\": 891423857780,\r\n        \"zip\": 500082\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/employee",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empId\": 199,\r\n    \"firstName\": \"nancy\",\r\n    \"lastName\": \"Wheeler\",\r\n    \"state\": \"Calfornia\",\r\n    \"address\": \"151 lucid hotel\",\r\n    \"mobile\": 9010958316,\r\n    \"emailId\": \"NancyWheeler@tecnisc.com\",\r\n    \"creditCard\": 43335634123434,\r\n    \"accountNumber\": 62428501400,\r\n    \"zip\": 500081\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/employee",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/delete/employee/18",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"employee",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "Get All Expenses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense-services/fetch/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"fetch",
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expenses By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense-services/fetch/expenseById/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"fetch",
+								"expenseById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expense By Merchant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense-services/fetch/expense/Tasty",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"fetch",
+								"expense",
+								"Tasty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Expense",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"expId\":18,\r\n    \"Date\":\"2020-02-09\",\r\n    \"merchant\": \"Krutunga1\",\r\n    \"expenseTypeModel\":{\r\n        \"expenseTypeId\":2\r\n    },\r\n    \"employeeModel\":{\r\n        \"empId\":11\r\n    },\r\n    \"paymentModel\":{\r\n    \"paymentId\": 1\r\n    },\r\n    \"amount\": 3000,\r\n    \"currency\": \"INR\",\r\n    \"status\" :\"APPROVED\",\r\n    \"description\":\"nothing\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expense-services/save/expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"save",
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Expense",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"expId\": 8,\r\n    \"merchant\": \"Paradise\",\r\n    \"expTypeId\": 2,\r\n    \"paymentId\": 1,\r\n    \"amount\": 3000,\r\n    \"currency\": \"INR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expense-services/update/expense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"update",
+								"expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense-services/delete/expense/{expId}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"delete",
+								"expense",
+								"{expId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Get All login Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense-services/fetch/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"fetch",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Login by Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense-services/fetch/loginStatus/{status}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"fetch",
+								"loginStatus",
+								"{status}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Login By Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense-services/fetch/username/{username}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"fetch",
+								"username",
+								"{username}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"employeeId\": 3624,\r\n        \"username\": \"benny\",\r\n        \"password\": \"bennhy\",\r\n        \"loginStatus\": \"Active\",\r\n        \"lastLogin\": \"12/06/2022\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expense-services/save/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"save",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Login",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"employeeId\": 34,\r\n        \"username\": \"benny\",\r\n        \"password\": \"benny\",\r\n        \"loginStatus\": \"Active\",\r\n        \"lastLogin\": \"12/06/2022\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/expense-services/update/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense-services",
+								"update",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "Get All Managers Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/managers",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"managers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Manager by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/managerById/1",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"managerById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Manager By ManagerName",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/manager/Sandeep Vangipura",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"manager",
+								"Sandeep Vangipura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Manager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"managerId\":1,\r\n    \"managerName\":\"Sanjay\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/manager",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Manager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"managerId\":1,\r\n    \"managerName\":\"Sanjay Jalagam\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/manager",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Manager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"employeeId\": 34,\r\n        \"username\": \"benny\",\r\n        \"password\": \"benny\",\r\n        \"loginStatus\": \"Active\",\r\n        \"lastLogin\": \"12/06/2022\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/delete/manager/2",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"manager",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Get All Reports Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/reports",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Report by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/report/{reportId}",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"report",
+								"{reportId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Report By Report Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/reportByName/New report",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"reportByName",
+								"New report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"total\":2000,\r\n    \"reportName\":\"New report\",\r\n    \"date\":\"2020-12-12\",\r\n    \"description\":\"no description\",\r\n    \"employeeModel\":{\r\n        \"empId\":18\r\n    },\r\n    \"duration\":\"10 days\",\r\n    \"status\":\"REPORTED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/report",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Report",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reportId\":1,\r\n    \"total\":2000,\r\n    \"reportName\":\"New report\",\r\n    \"date\":\"2020-12-12\",\r\n    \"description\":\"no description\",\r\n    \"employeeModel\":{\r\n        \"empId\":18\r\n    },\r\n    \"duration\":\"10 days\",\r\n    \"status\":\"REPORTED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/report",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Report",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"employeeId\": 34,\r\n        \"username\": \"benny\",\r\n        \"password\": \"benny\",\r\n        \"loginStatus\": \"Active\",\r\n        \"lastLogin\": \"12/06/2022\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/delete/report/{reportId}",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"report",
+								"{reportId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trips",
+			"item": [
+				{
+					"name": "Get All Trip Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/trips",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"trips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trip by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/trip/1",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"trip",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get trip by trip name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/tripByName/Mumbai Trip",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"tripByName",
+								"Mumbai Trip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Trip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2022-12-12\",\r\n    \"tripName\":\"New York Trip\",\r\n    \"startDate\":\"2020-12-12\",\r\n    \"endDate\":\"2022-12-12\",\r\n    \"status\":\"REPORTED\",\r\n    \"fromLocation\":\"Hyderabad\",\r\n    \"toLocation\":\"New York\",\r\n    \"description\":\"NO description\",\r\n    \"employeeId\":{\r\n        \"empId\":18\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/trip",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"trip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Trip",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"employeeId\": 34,\r\n        \"username\": \"benny\",\r\n        \"password\": \"benny\",\r\n        \"loginStatus\": \"Active\",\r\n        \"lastLogin\": \"12/06/2022\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/trip",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"trip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Trip",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"employeeId\": 34,\r\n        \"username\": \"benny\",\r\n        \"password\": \"benny\",\r\n        \"loginStatus\": \"Active\",\r\n        \"lastLogin\": \"12/06/2022\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/delete/trip/{tripId}",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"trip",
+								"{tripId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Fetch All Payment Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/payments",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/payment/1",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"payment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment By Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/paymentByName/debit",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"paymentByName",
+								"debit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \"payId\": 2,\r\n            \"paymentName\": \"Credit card\",\r\n            \"paymentDescription\": \"Credit card Type\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/payment",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n        \"payId\": 2,\r\n        \"paymentName\": \"UPI\",\r\n        \"paymentDescription\": \"UPI Type\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/payment",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/delete/payment/2",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"payment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense Type",
+			"item": [
+				{
+					"name": "Get All Expense Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/expenseType",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"expenseType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expense Type By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/fetch/expenseType/2",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"expenseType",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ExpenseType By name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/fetch/expenseTypeByName/Travel ",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"fetch",
+								"expenseTypeByName",
+								"Travel "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Expense Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"expenseType\":\"Travel \",\r\n    \"description\":\"Travel Expenses\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/save/expenseType",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"save",
+								"expenseType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ExpenseType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"expenseTypeId\": 3,\r\n    \"expenseType\":\"Travel and Lodgying\",\r\n    \"description\":\"Travel and Lodgying Expenses\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/update/expenseType",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"update",
+								"expenseType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Expense Type delete Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{expense_v2}}/delete/expenseType/{expenseTypeId}",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"delete",
+								"expenseType",
+								"{expenseTypeId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication and Registering users",
+			"item": [
+				{
+					"name": "User Authentication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"vinay212@tecnics.com\",\r\n    \"password\":\"Welcome@123\",\r\n    \"userProfile\":{}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/user/authenticate",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"user",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test3@tecnics.com\",\r\n    \"password\": \"Welcome@123\",\r\n    \"userProfile\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{expense_v2}}/user/save",
+							"host": [
+								"{{expense_v2}}"
+							],
+							"path": [
+								"user",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

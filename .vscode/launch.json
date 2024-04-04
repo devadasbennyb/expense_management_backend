@@ -1,0 +1,29 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch ExpenseServicesApplication",
+      "request": "launch",
+      "mainClass": "com.tecnics.expenseservices.ExpenseServicesApplication",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Launch ExpenseServicesApplicationTests",
+      "request": "launch",
+      "mainClass": "com.tecnics.expenseservices.ExpenseServicesApplicationTests",
+      "projectName": "expense-services"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ExpenseServicesApplication<expense-services>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.tecnics.expenseservices.ExpenseServicesApplication",
+      "projectName": "expense-services",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
